@@ -28,11 +28,12 @@ class ProgramItem extends \yii\db\ActiveRecord
   public $tblmc;
   public $program;
   public $feeder;
+  /*test*/
   /*End*/
-  public $program;
+  //public $program;
   public $directiion;
   public $tbl;
-  public $customer;
+  //public $customer;
   // public $part_type;
     /**
      * {@inheritdoc}
