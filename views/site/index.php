@@ -2,6 +2,7 @@
 /* @var $this yii\web\View */
 /*Testgits*/
 $this->title = 'My Yii Application';
+/*สวัสดี นี่คือไฟล์ `readme.md` ที่ได้ถูกแก้ไขจากโฟลเดอร์ `another_pc_gitrepo`*/
 ?>
 <style>
     @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700');
