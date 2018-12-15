@@ -22,12 +22,12 @@ use Yii;
 class ProgramItem extends \yii\db\ActiveRecord
 {
   /*Import variable*/
-  public $customer;
+ public $customer;
   public $models;
   public $machine;
   public $tblmc;
   public $program;
-  public $feeder;
+  //public $feeder;
   /*test*/
   /*End*/
   //public $program;
@@ -50,7 +50,7 @@ class ProgramItem extends \yii\db\ActiveRecord
     {
       return [
           // [['program_detail_id', 'feeder_id', 'comment', 'amount', 'part_no','tbl','size'], 'required'],
-        [['program_detail_id', 'feeder_id', 'amount','directiion','part_type'], 'integer'],
+        [['program_detail_id', 'feeder_id', 'amount','directiion','part_type','models','tblmc'], 'integer'],
         [['comment','size'], 'string'],
         [['part_no'], 'string', 'max' => 100],
         [['feeder_id'], 'exist', 'skipOnError' => true, 'targetClass' => Feeder::className(), 'targetAttribute' => ['feeder_id' => 'id']],

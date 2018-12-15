@@ -77,6 +77,7 @@ use yii\helpers\Url;
                             'items' => [
                                 ['label' => 'Program', 'icon' => 'dashboard', 'url' => ['/program-item'],],
                                 ['label' => 'Create Program', 'icon' => 'file-code-o', 'url' => ['/program/create'],],
+                                  ['label' => 'Update Program', 'icon' => 'file-code-o', 'url' => ['/program-item/showupdate'],],
                                 ['label' => 'Export Arrengement Table', 'icon' => 'dashboard', 'url' => ['/program/export'],],
                             ]
                         ],

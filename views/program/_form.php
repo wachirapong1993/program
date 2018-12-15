@@ -23,17 +23,33 @@ use app\models\TableMachine;
 
 
     <?=
-    $form->field($model, 'models_p_id')->dropdownList(
+    $form->field($model, 'models_p_id')
+    ->widget(Select2::classname(), [
+        
+        //'name' => 'ddl-models',
+        'language' => 'th',
+        'data' => ArrayHelper::map(app\models\ModelsP::find()->all(), 'id', 'name','customer.name'),
+        'options' => [
+            'placeholder' => 'Select Program',
+            'id'=>'ddl-models',
+        ],
+            'pluginOptions' => [
+                'allowClear' => true
+            ],
+        ])->label('Model');
+
+   /* ->dropdownList(
             ArrayHelper::map(app\models\ModelsP::find()->all(), 'id', 'name', 'customer.name'), [
         'id' => 'ddl-models',
         'prompt' => 'Select Model'
-    ])->label('Model');
+    ])*/
     ?>
 
 
     <?=
     $form->field($model, 'Line_id')->widget(DepDrop::classname(), [
         'options' => ['id' => 'ddl-line'],
+        'type' => DepDrop::TYPE_SELECT2,
         'data' => [],
         'pluginOptions' => [
             'depends' => ['ddl-models'],
@@ -45,6 +61,7 @@ use app\models\TableMachine;
     <?=
     $form->field($modelD, 'machine')->widget(DepDrop::classname(), [
         'options' => ['id' => 'ddl-machine'],
+        'type' => DepDrop::TYPE_SELECT2,
         'data' => [],
         'pluginOptions' => [
             'depends' => ['ddl-models', 'ddl-line'],
@@ -57,6 +74,7 @@ use app\models\TableMachine;
     <?=
     $form->field($modelD, 'table_machine_id')->widget(DepDrop::classname(), [
         'options' => ['id' => 'ddl-table_machine_id'],
+        'type' => DepDrop::TYPE_SELECT2,
         'data' => [],
         'pluginOptions' => [
             'depends' => ['ddl-models', 'ddl-line','ddl-machine'],
@@ -72,6 +90,7 @@ use app\models\TableMachine;
     $form->field($model, 'pcb_id')->widget(Select2::classname(), [
         'data' => ArrayHelper::map(app\models\Pcb::find()->all(), 'id', 'name'),
         'options' => ['placeholder' => 'Select Direction'],
+        // 'type' => DepDrop::TYPE_SELECT2,
         'pluginOptions' => [
             'allowClear' => true,
         //   'minimumInputLength' => 2,

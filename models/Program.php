@@ -60,7 +60,8 @@ class Program extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Name',
-            'pcb_id' => 'Pcb ID',
+            'pcb_id' => 'Pcb',
+            'Line_id'=>'Line',
             'rev' => 'Rev',
             'program_status_id' => 'Program Status ID',
             'models_p_id' => 'Models P ID',

@@ -112,7 +112,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value' => 'partNo.celco_code',
                 'hAlign' => 'center',
             // 'vAlign' => 'middle',
-            // 'width' => '100px',
+                'width' => '100px',
             ],
             [
                 'label' => 'Part No',
